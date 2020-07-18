@@ -1,8 +1,8 @@
 import "./App.scss";
-import Heading from "./components/heading";
+import Feed from "./components/feed";
 
 const App = () => {
-  return <Heading text="Hello World" />;
+  return <Feed></Feed>;
 };
 
 export default App;

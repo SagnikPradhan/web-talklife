@@ -1,5 +1,11 @@
 html,
 body {
   margin: 0px;
-  background-color: black;
+  font: 16pt sans-serif;
+}
+
+div#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

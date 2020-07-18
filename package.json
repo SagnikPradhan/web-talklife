@@ -1,7 +1,7 @@
 {
-  "name": "react-rollup-starter",
+  "name": "talklife-web",
   "version": "0.0.0",
-  "description": "Another webapp",
+  "description": "Web version for talklife",
   "main": "src/main.jsx",
   "license": "MIT",
   "scripts": {

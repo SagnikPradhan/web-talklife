@@ -3094,9 +3094,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-rollup@workspace:.":
+"react-rollup-starter@workspace:.":
   version: 0.0.0-use.local
-  resolution: "react-rollup@workspace:."
+  resolution: "react-rollup-starter@workspace:."
   dependencies:
     "@rollup/plugin-commonjs": ^14.0.0
     "@rollup/plugin-node-resolve": ^8.4.0
