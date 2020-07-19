@@ -1,31 +1,14 @@
 import "./style.scss";
 
-function calcluateSpanLen(textLen) {
-  if (textLen >= 600) return 5;
-  if (textLen >= 500) return 4;
-  if (textLen >= 400) return 4;
-  if (textLen >= 300) return 3;
-  if (textLen >= 200) return 3;
-  if (textLen >= 180) return 3;
-  return 2;
-}
-
 export default ({ data }) => {
   let { content, user } = data;
 
-  if (content.length > 700) content = content.slice(0, 700);
-
+  // Show only part of the content if very huge
   const len = content.length;
-  const spanLen = calcluateSpanLen(len);
-
-  const gridStyle = { gridRow: `span ${spanLen}` };
-  let bigContentStyle = {
-    fontSize: "20pt",
-    fontFamily: "'Raleway', sans-serif",
-  };
+  if (len > 700) content = content.slice(0, 700);
 
   return (
-    <li style={gridStyle}>
+    <>
       <div id="user-info">
         <img
           src={user.avatar}
@@ -37,9 +20,7 @@ export default ({ data }) => {
         <span>{user.username}</span>
       </div>
 
-      <div id="content" style={len < 40 ? bigContentStyle : {}}>
-        {content}
-      </div>
-    </li>
+      <div id="content">{content}</div>
+    </>
   );
 };

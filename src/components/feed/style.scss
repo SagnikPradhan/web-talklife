@@ -1,10 +1,13 @@
+h2 {
+  font-size: 16pt;
+}
+
 ul#feed {
   padding: 1em;
   margin: 0;
   list-style-type: none;
 
   display: grid;
-  grid-auto-flow: dense;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-auto-rows: 125px;
   gap: 1em;
