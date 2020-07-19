@@ -2,28 +2,39 @@ import "./style.scss";
 import Post from "../post";
 import { useState, useEffect } from "react";
 
-export default () => {
+// Constants
+const APIBaseUrl = "https://web.talklife.co/api";
+
+// Stub values for useEffect
+const componentOnMount = [];
+
+function loadInitPosts(setFeed) {
+  const feedUrl = APIBaseUrl + "/feed?count=30";
+
+  fetch(feedUrl, {
+    headers: { "Access-Control-Allow-Origin": "*" },
+  })
+    .then((res) => res.json())
+    .then((body) => setFeed(body))
+    .catch((err) => {
+      if (err instanceof err) console.error(err);
+      else console.error(new Error(err));
+    });
+}
+
+// Component itself
+function component() {
   const [feed, setFeed] = useState([]);
 
-  const APIBaseUrl = "https://web.talklife.co/api";
-  const feedUrl = APIBaseUrl + "/feed?count=10";
-
-  useEffect(() => {
-    const main = async () => {
-      const res = await fetch(feedUrl);
-      const body = await res.json();
-
-      setFeed(body);
-    };
-
-    main().catch((err) => console.error(err));
-  }, []);
+  useEffect(() => loadInitPosts(setFeed), componentOnMount);
 
   return (
     <ul id="feed">
       {feed.map((data) => (
-        <Post data={data} />
+        <Post key={data.id} data={data} />
       ))}
     </ul>
   );
-};
+}
+
+export default component;
