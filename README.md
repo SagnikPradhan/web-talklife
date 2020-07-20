@@ -1,24 +1,5 @@
-# react-rollup-starter
+# Web TL
 
-React + Rollup + SASS + Yarn 2 Template 😻
+[![Website](https://img.shields.io/website?down_color=%23f5425a&style=flat-square&up_color=%23a245ff&up_message=running%20sweet&url=https%3A%2F%2Fweb-talklife.vercel.app)](https://web-talklife.vercel.app)
 
-> As this project uses Yarn PNP you can start working right away.
-> No need of `yarn install`!
-
-## Development
-
-```bash
-yarn dev
-```
-
-## Build
-
-```bash
-yarn build
-```
-
-## Serve
-
-```bash
-yarn dlx serve public --listen 5000
-```
+> An attempt to revive the web platform.
